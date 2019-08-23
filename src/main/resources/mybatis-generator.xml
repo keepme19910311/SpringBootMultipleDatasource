@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--数据源1-->
+<!--<generatorConfiguration>-->
+<!--    &lt;!&ndash;加载配置文件，为下面读取数据库信息准备&ndash;&gt;-->
+<!--    <properties resource="application.properties"/>-->
+
+<!--    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">-->
+
+<!--        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">-->
+<!--            &lt;!&ndash;其中tk.mybatis.mapper.generator.MapperPlugin很重要，用来指定通用Mapper对应的文件，这样我们生成的mapper都会继承这个通用Mapper&ndash;&gt;-->
+<!--            <property name="mappers" value="com.zcph.oaonline.util.MyMapper" />-->
+<!--            &lt;!&ndash;caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true&ndash;&gt;-->
+<!--            <property name="caseSensitive" value="false"/>-->
+<!--        </plugin>-->
+
+
+<!--        &lt;!&ndash;数据库链接地址账号密码，这里由于我使用的是根据开发和生产分离的配置文件，所以这里直接写上了&ndash;&gt;-->
+<!--        <jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+<!--                        connectionURL="jdbc:mysql://192.168.128.244:3306/online_oa?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"-->
+<!--                        userId="root"-->
+<!--                        password="zcoa">-->
+<!--        </jdbcConnection>-->
+
+<!--        <javaTypeResolver>-->
+<!--            <property name="forceBigDecimals" value="false"/>-->
+<!--        </javaTypeResolver>-->
+
+<!--        &lt;!&ndash;生成Model类存放位置&ndash;&gt;-->
+<!--        <javaModelGenerator targetPackage="com.zcph.oaonline.entity" targetProject="src/main/java">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--            <property name="trimStrings" value="true"/>-->
+<!--        </javaModelGenerator>-->
+
+<!--        &lt;!&ndash;生成映射文件存放位置&ndash;&gt;-->
+<!--        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--        </sqlMapGenerator>-->
+
+<!--        &lt;!&ndash;生成Dao类存放位置&ndash;&gt;-->
+<!--        &lt;!&ndash; 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码-->
+<!--                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象-->
+<!--                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口-->
+<!--        &ndash;&gt;-->
+<!--        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zcph.oaonline.mapper" targetProject="src/main/java">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--        </javaClientGenerator>-->
+
+<!--        &lt;!&ndash;生成对应表及类名-->
+<!--        去掉Mybatis Generator生成的一堆 example-->
+<!--        &ndash;&gt;-->
+<!--        <table tableName="user_login_table" domainObjectName="UserLoginTable">-->
+<!--        </table>-->
+<!--    </context>-->
+<!--</generatorConfiguration>-->
+<!--数据源2-->
+<generatorConfiguration>
+<!--加载配置文件，为下面读取数据库信息准备-->
+<properties resource="application.properties"/>
+
+<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+    <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+        <!--其中tk.mybatis.mapper.generator.MapperPlugin很重要，用来指定通用Mapper对应的文件，这样我们生成的mapper都会继承这个通用Mapper-->
+        <property name="mappers" value="com.zcph.oaonline.util.MyMapper" />
+        <!--caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true-->
+        <property name="caseSensitive" value="false"/>
+    </plugin>
+
+
+    <!--数据库链接地址账号密码，这里由于我使用的是根据开发和生产分离的配置文件，所以这里直接写上了-->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://192.168.128.61:3306/bgc?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
+                    userId="root"
+                    password="root">
+    </jdbcConnection>
+
+    <javaTypeResolver>
+        <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <!--生成Model类存放位置-->
+    <javaModelGenerator targetPackage="com.zcph.oaonline.entity" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true"/>
+        <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+
+    <!--生成映射文件存放位置-->
+    <sqlMapGenerator targetPackage="mapper2" targetProject="src/main/resources">
+        <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+
+    <!--生成Dao类存放位置-->
+    <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码
+            type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
+            type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
+    -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.zcph.oaonline.mapper2" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+
+    <!--生成对应表及类名
+    去掉Mybatis Generator生成的一堆 example
+    -->
+    <table tableName="news" domainObjectName="News">
+    </table>
+</context>
+</generatorConfiguration>

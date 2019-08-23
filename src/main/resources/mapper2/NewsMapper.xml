@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zcph.oaonline.mapper2.NewsMapper">
+  <resultMap id="BaseResultMap" type="com.zcph.oaonline.entity.News">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="news_id" jdbcType="VARCHAR" property="newsId" />
+    <result column="news_type" jdbcType="INTEGER" property="newsType" />
+    <result column="news_title" jdbcType="VARCHAR" property="newsTitle" />
+    <result column="news_introduction" jdbcType="VARCHAR" property="newsIntroduction" />
+    <result column="news_cover" jdbcType="VARCHAR" property="newsCover" />
+    <result column="news_content" jdbcType="VARCHAR" property="newsContent" />
+    <result column="news_date" jdbcType="TIMESTAMP" property="newsDate" />
+    <result column="news_read_times" jdbcType="INTEGER" property="newsReadTimes" />
+    <result column="news_create" jdbcType="TIMESTAMP" property="newsCreate" />
+    <result column="news_update" jdbcType="TIMESTAMP" property="newsUpdate" />
+    <result column="news_show_status" jdbcType="INTEGER" property="newsShowStatus" />
+    <result column="news_status" jdbcType="INTEGER" property="newsStatus" />
+    <result column="news_spare_varchar" jdbcType="VARCHAR" property="newsSpareVarchar" />
+    <result column="news_spare_date" jdbcType="DATE" property="newsSpareDate" />
+    <result column="news_spare_int" jdbcType="INTEGER" property="newsSpareInt" />
+  </resultMap>
+</mapper>
